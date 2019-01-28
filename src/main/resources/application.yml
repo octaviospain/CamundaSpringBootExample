@@ -1,0 +1,11 @@
+app:
+  name: RiskEngine
+  group: eddie
+  version: SNAPSHOT
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: Camunda Spring Boot example

@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.0.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.6.RELEASE'
+}
+
+group 'com.transgressoft'
+version 'SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa:2.0.5.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web-services:2.0.5.RELEASE'
+
+    // Spring libraries
+
+    // Camunda
+    compile 'org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter:3.0.0'
+    compile 'org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter-rest:3.0.0'
+    compile 'org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter-webapp:3.0.0'
+    compile 'org.camunda.bpm:camunda-engine-plugin-connect:7.9.0'
+
+    // Camunda plugin: Spin XML/JSON data formats
+    compile 'org.camunda.spin:camunda-spin-core:1.6.0'
+    compile 'org.camunda.spin:camunda-spin-dataformat-all:1.6.0'
+    compile 'org.camunda.bpm:camunda-engine-plugin-spin:7.9.0'
+
+    // Camunda plugin: Feel SCALA
+    compile 'org.camunda.bpm.extension.feel.scala:feel-engine-plugin:1.6.2'
+
+    // Utils
+    compile 'com.google.guava:guava:27.0.1-jre'
+    compile 'org.apache.commons:commons-lang3:3.8.1'
+
+    // H2 JDBC Driver
+    runtime 'com.h2database:h2:1.4.197'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.0'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.3.0'
+    testCompile 'org.mockito:mockito-junit-jupiter:2.23.0'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter-test:3.0.0'
+}
+
+test {
+    useJUnitPlatform {
+        includeEngines 'junit-jupiter'
+    }
+}

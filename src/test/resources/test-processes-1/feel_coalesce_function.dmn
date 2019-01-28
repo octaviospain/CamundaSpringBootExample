@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="coalesce_test" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="coalesce" name="coalesce">
+    <extensionElements>
+      <biodi:bounds x="340" y="200" width="180" height="80" />
+      <biodi:edge source="input">
+        <biodi:waypoints x="433" y="365" />
+        <biodi:waypoints x="431" y="280" />
+      </biodi:edge>
+      <biodi:edge source="Decision_14ieupj">
+        <biodi:waypoints x="203" y="366" />
+        <biodi:waypoints x="368" y="280" />
+      </biodi:edge>
+      <biodi:edge source="Decision_0k087zq">
+        <biodi:waypoints x="645" y="368" />
+        <biodi:waypoints x="514" y="280" />
+      </biodi:edge>
+      <biodi:edge source="input2">
+        <biodi:waypoints x="195" y="366" />
+        <biodi:waypoints x="341" y="280" />
+      </biodi:edge>
+      <biodi:edge source="input3">
+        <biodi:waypoints x="650" y="363" />
+        <biodi:waypoints x="520" y="280" />
+      </biodi:edge>
+      <biodi:edge source="input1">
+        <biodi:waypoints x="427" y="366" />
+        <biodi:waypoints x="432" y="280" />
+      </biodi:edge>
+    </extensionElements>
+    <variable id="InformationItem_1xvz7rx" name="result" typeRef="integer" />
+    <informationRequirement>
+      <requiredDecision href="#input2" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#input3" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#input1" />
+    </informationRequirement>
+    <literalExpression id="LiteralExpression_1l0ayst" expressionLanguage="feel">
+      <text>coalesce(input1, input2, input3)</text>
+    </literalExpression>
+  </decision>
+  <decision id="input2" name="input2">
+    <extensionElements>
+      <biodi:bounds x="343" y="365" width="180" height="80" />
+    </extensionElements>
+    <variable id="InformationItem_0s2rrxp" name="input2" typeRef="integer" />
+    <literalExpression id="LiteralExpression_1o4wv3a" expressionLanguage="feel">
+      <text>20</text>
+    </literalExpression>
+  </decision>
+  <decision id="input1" name="input1">
+    <extensionElements>
+      <biodi:bounds x="31" y="367" width="180" height="80" />
+    </extensionElements>
+    <variable id="InformationItem_0au3jln" name="input1" typeRef="integer" />
+    <literalExpression id="LiteralExpression_0fm14ct" expressionLanguage="feel">
+      <text>10</text>
+    </literalExpression>
+  </decision>
+  <decision id="input3" name="input3">
+    <extensionElements>
+      <biodi:bounds x="623" y="363" width="180" height="80" />
+    </extensionElements>
+    <variable id="InformationItem_15fatt8" name="input3" typeRef="integer" />
+    <literalExpression id="LiteralExpression_078aajh" expressionLanguage="feel">
+      <text>30</text>
+    </literalExpression>
+  </decision>
+</definitions>
